@@ -1,0 +1,231 @@
+.photo{
+  background: url("https://e0.pxfuel.com/wallpapers/527/1001/desktop-wallpaper-sunset-top-best-sunset-background-relaxing-sunset.jpg") fixed;
+  background-size: cover;
+  background-position: center;
+}
+.johnNav{
+  align-items: center;
+  display: flex;
+  font-size: 1.75rem;
+  width: 100%;
+  height: 4em;
+  background-color: transparent;
+}
+.johnNavMobile{
+  align-items: center;
+  font-size: 1.75rem;
+  width: 100%;
+  display: none;
+  background-color: transparent;
+}
+.johnNavItems{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: auto 10px;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  ul{
+    display: flex;
+    margin: auto 0 auto auto;
+    padding: 0;
+  }
+  li{
+    list-style-type: none;
+    margin: auto;
+    padding: 0 10px;
+    border-right: #ffda1a 0.1em solid;
+    filter: drop-shadow(2px 2px black);
+    a{
+      color: #ffda1a;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bolder;
+    }
+  }
+  .lastLi{
+    border-right: none;
+    padding-right: 0;
+  }
+  .johnName{
+    font-size: 2em;
+    font-weight: bold;
+    span {
+      background: linear-gradient(#ffdd00, #b95260);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(2px 2px black);
+    }
+  }
+}
+.navContainer{
+  display: flex;
+  margin: auto 0 auto auto;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  height: auto;
+}
+.profileContainer{
+  width: 100%;
+  padding: 0 10px;
+  margin: auto;
+  align-items: center;
+  display: flex;
+}
+.profileIntro{
+  font-size: 16px;
+  width: 70%;
+  margin: 66.2px auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.profilePhoto{
+  background-color: white;
+  margin: 7em auto;
+  width: 25em;
+  border-radius: 50%;
+  height: 25em;
+  img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+.greetingPara{
+  font-size: 1.2em;
+  margin: 10px 0;
+  line-height: 1.5;
+  text-align: left;
+  text-shadow: 1.5px 1.5px black;
+}
+.greeting{
+  margin: 0;
+  text-align: left;
+  text-shadow: 2px 2px black;
+}
+
+.defaultContainer{
+  display: flex;
+  margin: 0 5%;
+  flex-direction: column;
+  .logos {
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    margin: auto;
+    max-width: 80%;
+    img{
+      height: 10vw;
+      margin-bottom: 10px;
+      min-height: 70px;
+      max-height: 100px;
+    }
+  }
+  .skills{
+    font-size: 2em;
+    margin: auto;
+    text-align: center;
+    height: 10%;
+    font-weight: bold;
+    color: #F6BE00;
+  }
+}
+
+
+@media only screen and (max-width: 975px) {
+  .profileContainer {
+    flex-direction: column-reverse;
+  }
+  .profilePhoto{
+    width: 20em;
+    height: 20em;
+    margin: 5em auto;
+  }
+  .profileIntro{
+    font-size: 14px;
+    width: 80%;
+    margin: 20px auto;
+  }
+  .johnNav{
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .johnNavMobile{
+    display: none;
+  }
+  .johnNavItems {
+    justify-content: center;
+    flex-direction: column;
+    ul{
+      margin: auto;
+    }
+    .lastLi{
+      padding: 0 10px;
+    }
+  }
+  .defaultContainer{
+    .skills{
+      font-size: 1.8em;
+    }
+  }
+  /*
+  .navContainer{
+    flex-direction: column;
+  }
+  .navItems{
+    justify-content: center;
+    flex-direction: column;
+    ul{
+      margin: auto;
+    }
+    li{
+      filter: none;
+      border-right: none;
+      padding: 0;
+      margin: 2px auto;
+      a{
+        text-shadow: 2px 2px black;
+      }
+    }
+  }
+
+   */
+  .johnName{
+    margin: 10px auto;
+  }
+
+}
+@media only screen and (max-width: 491px) {
+  .profilePhoto{
+    width: 15em;
+    height: 15em;
+    margin:2.5em auto;
+  }
+  .profileIntro{
+    font-size: 12px;
+    width: 80%;
+    margin: 10px auto;
+  }
+  .johnNavItems{
+    li {
+      margin: auto;
+      padding: 0 5px;
+      a{
+        font-size: .8em;
+      }
+    }
+    .lastLi{
+      padding: 0 5px;
+    }
+  }
+}

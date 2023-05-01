@@ -1,0 +1,221 @@
+@use "Variables";
+.animate {
+  animation: animatezoom 0.6s;
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 422px;
+  color: white;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-bottom: 10px;
+  font-size: Variables.$lg-text;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn.reset {
+  background-color: rgba(255, 30, 0, 0.818);
+  // color: black;
+  border-color: rgba(255, 30, 0, 0.818);
+  float: right;
+}
+.btn.signup {
+  background-color: black;
+  color: white;
+  float: right;
+  border: none;
+}
+.btn.signedup {
+  background-color: transparent;
+  border: none;
+  color: #495057;
+}
+
+.form-control {
+  height: 25px;
+  padding: 10px 0;
+  font-size: 1.6rem;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control.is-invalid {
+  border-color: #dc3545;
+  // padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.357em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.form-control.is-invalid:focus {
+  border-color: #dc3545;
+  //box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  label {
+    text-align: initial;
+  }
+  input {
+    width: 400px;
+    outline: none;
+    border-radius: 10px;
+    background: transparent;
+  }
+}
+
+.justifycenter {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  div {
+    color: rgb(194, 194, 194);
+  }
+}
+
+.modal {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  .google {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    #googlebutton {
+      display: flex;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: transparent;
+      // cursor: pointer;
+      border-color: black;
+      border-style: solid;
+      padding: 2px;
+      svg {
+        // padding: 1%;
+        margin-top: 8px;
+      }
+      div {
+        font-size: Variables.$lg-text;
+        padding: 1%;
+        width: 400px;
+        outline: none;
+        background-color: transparent;
+      }
+    }
+  }
+  .modallabel {
+    margin-left: 90px;
+    font-size: Variables.$lg-text;
+    margin-bottom: 20px;
+  }
+
+  #googlebutton:hover {
+    // background-color: skyblue;
+  }
+}
+
+.modalContainer {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalX {
+  display: flex;
+  cursor: pointer;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  width: 100%;
+  text-align: center;
+}
+
+#text-center {
+  text-align: center;
+}
+
+@media only screen and (max-width: 410px) {
+  .btn {
+    width: 250px;
+  }
+  .modal {
+    height: 370px;
+    width: 300px;
+  }
+  .modalBody {
+    .formGroup {
+      margin-bottom: 5px;
+    }
+    .formGroup input {
+      width: 290px;
+      height: 20px;
+      padding: 0px;
+    }
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .btn {
+    width: 250px;
+  }
+  .formGroup {
+    height: 50px;
+    label {
+      font-size: large;
+    }
+  }
+  .modal {
+    height: 470px;
+    width: 400px;
+  }
+  .modalBody {
+    .formGroup {
+      margin-bottom: 5px;
+    }
+    .formGroup input {
+      width: 290px;
+      height: 20px;
+      padding: 0px;
+    }
+  }
+}

@@ -1,0 +1,343 @@
+@use "Variables";
+
+.aboutTitle {
+  color: black;
+  font-size: calc(14px + 1vw);
+  margin: 0;
+  text-align: center;
+  font-family: Open;
+}
+.linkedIn {
+  width: 100%;
+  margin: auto;
+}
+
+.aboutPhoto {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.aboutText {
+  font-size: calc(10px + 1vw);
+  margin: 0;
+  max-height: 250px;
+  text-align: center;
+}
+
+.aboutUs {
+  border-width: thin;
+  flex-direction: column;
+  justify-content: center;
+  height: 20vh;
+  margin: auto;
+  width: 95%;
+  display: flex;
+  min-height: 150px;
+}
+
+.bottomContainer {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin: 5% 0 10px 0;
+}
+
+.cardContainer {
+  width: calc(100% / 3);
+  border-radius: 10%;
+}
+
+#container {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.hrAbout {
+  width: 50%;
+  border-width: 2px;
+}
+
+.flexContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.glow-on-hover {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: calc(10px + 0.75vw);
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #353935,
+    #000000,
+    #353437,
+    #ff0000,
+    #353437,
+    #000000,
+    #353935,
+    #1a1a1b,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(1px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: #1a1a1b;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.groupContainer {
+  position: relative;
+}
+
+// #hr {
+//   background-color: black;
+//   border-width: 1px;
+// }
+
+// .linkedIn {
+//   font-size: calc(11px + 0.5vw);
+// }
+
+// You were setting the logos to 60 % of the 60 % you had originally gave it.
+// Delete logosContainer
+
+// .logosContainer {
+//   display: flex;
+//   height: 60%;
+//   margin: auto;
+//   width: 100%;
+// }
+
+.logosFit {
+  display: flex;
+  height: calc(60%);
+  width: 100%;
+  margin: auto;
+  img {
+    height: 6vw;
+    margin: auto;
+    min-height: 65px;
+  }
+}
+
+.member {
+  background-color: white;
+  border-radius: 10%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 32%;
+}
+
+.members {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  margin: auto;
+  min-width: 460px;
+  width: 50%;
+}
+
+.membersContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a:nth-child(1) {
+    text-decoration: none;
+    min-width: 80px;
+    width: 25%;
+    margin-top: auto;
+    color: #0000ee;
+    font-size: Variables.$md-text;
+  }
+}
+
+.nameText {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Courier New", monospace;
+  font-size: Variables.$lg-text;
+}
+
+.profile {
+  height: 20vw;
+  display: flex;
+  /* padding-top: 100%; */
+  /* aspect-ratio: 1/1; */
+  width: 20vw;
+  max-height: 150px;
+  max-width: 150px;
+  min-width: 75px;
+  min-height: 75px;
+  border-radius: 50%;
+  background-color: gray;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.profilePic {
+  background-color: grey;
+  border-radius: 50%;
+  max-height: 175px;
+  max-width: 175px;
+  min-height: 100px;
+  min-width: 100px;
+  // padding-top: 50%;
+  position: relative;
+  width: 50%;
+}
+
+// .modInfo {
+//   display: flex;
+//   height: 50%;
+//   width: 100%;
+// }
+
+.modWords {
+  font-size: calc(14px + 0.5vw);
+  height: 100%;
+  margin: auto;
+  // min-font-size: 16px;
+  text-align: center;
+}
+
+.occupation {
+  font-size: calc(10px + 0.3vw);
+}
+
+.technologies {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  margin: auto;
+  min-width: 400px;
+  width: 50%;
+  max-height: 250px;
+  min-height: 200px;
+}
+
+.technologiesTitleFont {
+  margin: 10px 0;
+  font-size: calc(14px + 1vw);
+  text-align: center;
+}
+
+.tyabout {
+  object-fit: cover;
+  overflow: scroll;
+  zoom: 30px;
+  // height: 50%;
+}
+.tyabout:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+// view {
+//   align-items: center;
+//   justify-content: center;
+//   margin: auto;
+// }
+
+@media only screen and (max-width: 700px) {
+  .nameText {
+    font-size: Variables.$lg-text / 1.5;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nameText {
+    font-size: Variables.$lg-text / 2;
+  }
+  .technologies {
+  }
+}
+@media only screen and (max-width: 450px) {
+  .membersContainer {
+    flex-direction: column;
+  }
+  .cardContainer {
+    width: 80%;
+    margin: 5px auto;
+  }
+  .profile {
+    width: 35vw;
+    height: 35vw;
+  }
+  .nameText {
+    font-size: 15px;
+  }
+  .technologies {
+    width: 95%;
+    height: 28vh;
+    min-width: 0;
+    min-height: 150px;
+  }
+  .logosFit {
+    height: 40%;
+    min-height: 69px;
+    img{
+      height: 65%;
+      min-height: 0;
+    }
+  }
+}

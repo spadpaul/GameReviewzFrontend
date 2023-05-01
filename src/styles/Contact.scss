@@ -1,0 +1,137 @@
+.wholeContainer {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+}
+.contactContainer {
+  width: 50%;
+  margin: 0 5% 0 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: white;
+  position: relative;
+}
+.contactTitle {
+  color: Red;
+  font-size: calc(25px + 1vw);
+  text-align: center;
+  margin: auto auto 5px 5%;
+  font-weight: 800;
+}
+
+.contactText {
+  font-size: calc(10px + 0.5vw);
+  text-align: left;
+  margin: 0 5% auto 5%;
+  color: gray;
+}
+
+.contactUs {
+  flex-direction: column;
+  margin: 0 0 0 5%;
+  width: 50%;
+  background-color: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formHeader {
+  width: fit-content;
+  margin: auto auto 10px auto;
+  border-bottom: 3px solid black;
+}
+input:disabled {
+  cursor: not-allowed;
+  font-weight: bold;
+  font-style: italic;
+}
+.inputForms {
+  width: 80%;
+  margin: auto;
+  display: block;
+  button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 60px;
+    font-size: 1.7em;
+    display: block;
+  }
+  input {
+    border-radius: 10px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+  }
+}
+.popup {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: #111111;
+  border-width: 1px;
+  width: 60%;
+  background-color: #ffffff;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  text-align: center;
+  padding: 5%;
+}
+.popup p {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 5% auto 5% auto;
+}
+.checkCircleFill {
+  height: 40%;
+  margin: 5% auto 0 auto;
+  font-size: 112px;
+  color: red;
+}
+.popup img {
+  height: 40%;
+  margin: 5% auto 0 auto;
+}
+.popup button {
+  width: 90%;
+  height: 25%;
+  background-color: #ff0000;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: auto;
+}
+
+@media only screen and (max-width: 850px) {
+  .wholeContainer {
+    flex-direction: column;
+  }
+  .contactContainer {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .contactUs {
+    width: 100%;
+    height: 25vh;
+    margin: 0;
+    min-height: 200px;
+  }
+  .contactTitle {
+    margin: auto auto 5px auto;
+  }
+  .contactText {
+    margin: 0 20% auto 20%;
+  }
+}

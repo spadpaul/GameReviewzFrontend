@@ -1,0 +1,334 @@
+@use "Variables";
+
+
+.articleIMG{
+  justify-content: center;
+  display: flex;
+}
+
+.articleImages {
+  height: 250px;
+  // width: 500px;
+  object-fit: cover;
+  max-width: 1000px;
+  margin: 5px;
+}
+
+.backgroundPhotoCont {
+  background-color: black;
+  height: 60vh;
+  left: 0;
+  min-height: 300px;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.blurredPhoto {
+  filter: blur(4px) brightness(50%);
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+  font-size: Variables.$md-text;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.comment-form-title {
+  font-size: Variables.$lg-text;
+  font-weight: bold;
+}
+
+.commentActions {
+  display: flex;
+  gap: 10px;
+  font-size: Variables.$sm-text;
+  div {
+    cursor: pointer;
+    color: #495057;
+  }
+}
+
+.commentActions div:hover {
+  text-decoration: underline;
+}
+
+.commentsection {
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+  height: 50px;
+}
+
+.user {
+  display: flex;
+  gap: 10px;
+  font-size: Variables.$md-text;
+}
+
+.comments {
+  margin: 0 3%;
+}
+
+.commentarea {
+  display: flex;
+  justify-content: center;
+  textarea {
+    padding: 1%;
+    width: 50%;
+    border-radius: 10px;
+  }
+}
+
+.gameBox {
+  height: 252px;
+  object-fit: cover;
+  position: absolute;
+  width: 150px;
+}
+
+.gameContainer {
+  display: flex;
+  height: 84%;
+  left: 5%;
+  position: absolute;
+  top: 8%;
+  width: 90%;
+}
+
+.gameInfo {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0;
+  margin-left: 160px;
+  margin-top: 0;
+}
+
+.gameTitle {
+  color: white;
+  font-size: calc(20px + 0.5vw);
+  margin: 0;
+  // height: 215px;
+}
+
+.gameFacts {
+  color: white;
+  font-size: calc(13px + 0.1vw);
+}
+
+.articleInfo {
+  color: #495057;
+  font-size: calc(12px + 0.1vw);
+  height: calc(12px + 0.1vw);
+  margin: 0 4%;
+}
+
+.alignLeft {
+  float: left;
+  margin: auto;
+}
+.alignRight {
+  float: right;
+  margin: auto;
+}
+
+.articleHr {
+  margin: 0 3%;
+}
+
+.bodyContainer {
+  display: flex;
+  margin: 0 6%;
+}
+.articleContainer {
+  border-right: 1px;
+  border-style: none solid none none;
+  width: 80%;
+}
+
+.actualArticle {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+.possiblyAds {
+  display: none;
+  flex-direction: column;
+  margin: 0 2.5%;
+  width: 20%;
+}
+.unknown {
+  background-color: white;
+  height: 300px;
+  margin-bottom: 15%;
+  width: 100%;
+}
+
+.unknownTitle {
+  align-items: center;
+  background-color: #900d09;
+  color: white;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  height: 10%;
+  margin: auto;
+  padding-left: 5%;
+}
+
+.commentsTitle {
+  color: black;
+  font-size: calc(20px + 0.5vw);
+  font-weight: bold;
+  margin: 0;
+}
+
+.commentsSection {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  max-width: 1000px;
+  width: 80%;
+}
+
+.userCommentContainer {
+  border-style: none none solid none;
+  border: 2px;
+  display: flex;
+  margin: 0 2.75% 10px 2.75%;
+  padding-bottom: 10px;
+}
+
+.userPhotoContainer {
+  margin: 1%;
+  max-height: 80px;
+  max-width: 80px;
+  min-height: 50px;
+  min-width: 50px;
+  position: relative;
+  width: 100%;
+}
+.userPhotoContainer::after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.userPhoto {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}
+
+.userInfo {
+  color: black;
+  font-size: 14px;
+  height: 14px;
+  justify-content: space-between;
+  margin: 1.5% 1%;
+  text-align: center;
+}
+
+.username {
+  color: rgb(6, 6, 172);
+}
+.otherContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.userComment {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 1%;
+}
+
+.userIcon {
+  font-size: 5rem;
+}
+
+.otherArticlesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 auto auto;
+  min-width: 200px;
+  width: 20%;
+}
+
+.otherArticle {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: auto 2.75% 25px 2.75%;
+}
+
+.otherArticlePhoto {
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.otherArticleTitle {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0;
+  width: 100%;
+}
+
+.ratings {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.starfill {
+  position: relative;
+  top: -5px;
+  color: gold;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .possiblyAds {
+    display: none;
+  }
+  .otherArticlesContainer {
+    display: none;
+  }
+  .articleContainer {
+    border-right: 0;
+    width: 100%;
+  }
+  .actualArticle {
+    // margin: auto;
+    text-align: left;
+    width: 100%;
+  }
+  .commentsSection {
+    max-width: 900px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1190px) {
+  .possiblyAds {
+    width: 210px;
+  }
+  .articleContainer {
+    width: available;
+  }
+}

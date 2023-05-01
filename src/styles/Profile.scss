@@ -1,0 +1,27 @@
+@use "Variables";
+
+.profileHeader {
+  margin-left: 2rem;
+  display: flex;
+  gap: 20px;
+  h1 {
+    font-size: 3rem;
+    text-decoration: underline;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .imgContainer {
+    background-color: lightgray;
+    padding: 4%;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.profilepageimg {
+  font-size: 10rem;
+  color: blue;
+}

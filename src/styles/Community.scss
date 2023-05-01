@@ -1,0 +1,239 @@
+.birthdays {
+  //flex-grow: 1.5;
+}
+
+.break {
+  flex-basis: 100%;
+}
+
+.column {
+  flex: 1;
+  margin: 15px 1%;
+  padding: 10px;
+  transition: 0.3s;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color:#f2f2f2;
+}
+
+.columns {
+  margin: auto 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  //margin: 5px 0;
+}
+
+.communityPage {
+  font-family: sans-serif;
+  margin-top: 50px;
+  //background-image: url("../assets/resul-mentes-DbwYNr8RPbg-unsplash.jpg");
+  //background-color: lightblue;
+}
+
+#communityTitle {
+  color: red;
+  background-color: black;
+  border-radius: 15px;
+  //font-style: italic;
+  padding-right: 5px;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+  margin-bottom: 3%;
+}
+
+.eldenring {
+  // background-image: url("../assets/eldenring.jpeg");
+  // background-position: 24% 4.5%;
+  background-color: #50c878;
+  padding: 1em 1em 1em 3em;
+  margin: 0.5em 0;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.2s;
+  font-size: 1.5em;
+}
+
+.gameReleases {
+  //flex-grow: 2;
+}
+
+.hogwarts:hover {
+  background-image: url("../assets/hogwartslegacy.jpeg");
+  background-position: 30% 55%;
+  filter: brightness(50%);
+}
+
+.jedi:hover {
+  background-image: url("../assets/jedisurvivor.jpg");
+  background-position: 7.3% 28%;
+  filter: brightness(50%);
+}
+
+.mosts {
+  border-bottom: 2px solid #666;
+  //width: 45%;
+  display: flex;
+  margin: auto auto 10px auto;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.mostSection {
+  justify-content: space-between;
+  text-align: left;
+  .leftValue{
+    float: left;
+  }
+  .rightValue{
+    float: right;
+  }
+}
+
+.option {
+  background: #f2f2f2;
+  padding: 1em 1em 1em 3em;
+  margin: 0.5em 0;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.2s;
+  font-size: 1.5em;
+}
+
+// .option:hover {
+//   background: #e5e5e5;
+// }
+
+.poll {
+  float: left;
+  margin-left: 5%;
+  width: 40%;
+  margin-bottom: 3%;
+  height: 350px;
+  background: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5em;
+  border-radius: 10px;
+  position: relative;
+}
+
+.pollOptions {
+  list-style: none;
+  padding: 0;
+}
+
+.profPic {
+  height: 1em;
+  width: 1em;
+}
+
+.question {
+  margin-bottom: 1em;
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 2px solid #666;
+}
+
+.spongebob:hover {
+  background-image: url("../assets/spongebob.jpg");
+  background-position: center;
+  filter: brightness(50%);
+}
+
+.submitButton {
+  margin: auto;
+}
+
+.techReleases {
+  //flex-grow: 2;
+}
+
+.topMembers {
+  margin: auto;
+  width: 87%;
+  list-style: decimal;
+  font-size: large;
+  display: inline-block;
+  border: 1px solid;
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 3%;
+  background-color: white;
+  display: flex;
+}
+
+#topMembersTitle {
+  font-weight: bold;
+  font-size: xx-large;
+  float: left;
+  margin-top: 2%;
+  display: block;
+}
+
+.userNames {
+  display: inline-block;
+  justify-content: center;
+  padding-inline-start: 0;
+  font-size: 1.2em;
+  width: 95%;
+}
+
+.userValue {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  font-size: 1.3em;
+}
+
+.zelda:hover {
+  background-image: url("../assets/zelda.jpg");
+  background-position: 40% 20%;
+  filter: brightness(50%);
+}
+
+@media (max-width: 1100px){
+  .column{
+    flex: 40%;
+  }
+  .poll{
+    float: none;
+    width: 90%;
+    height: fit-content;
+    margin: auto auto 50px auto;
+  }
+
+  .communityPage{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .mosts{
+    margin: 10px;
+  }
+}
+
+@media (max-width: 800px){
+  .column{
+    margin: auto auto 15px auto;
+    text-align: center;
+    width: 98%;
+    padding: 0;
+    flex: 1 1;
+  }
+  .columns{
+    margin: 15px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .topMembers{
+    margin: auto auto 50px auto;
+    width: 90%;
+    padding: 0;
+    align-items: center;
+  }
+}
