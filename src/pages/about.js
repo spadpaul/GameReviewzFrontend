@@ -7,6 +7,7 @@ import Discord_logo from "../assets/discord_logo.png";
 import Linkedin_logo from "../assets/Linkedin_Logo.png";
 import Ty from "../assets/tyabout.jpeg";
 import Paul from "../assets/paul_about.png";
+import John from "../assets/john.jpg"
 import { NavLink } from "react-router-dom";
 
 function About() {
@@ -76,7 +77,7 @@ function Card() {
       url: "https://www.birdforum.net/",
       city: "White Plains, NY",
       path: "/portfolio/john",
-      img: "",
+      img: John,
     },
     {
       name: "Paul Spadaccini",
