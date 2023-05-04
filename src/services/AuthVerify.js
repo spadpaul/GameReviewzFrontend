@@ -1,14 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-// const parseJwt = (token) => {
-//   try {
-//     return JSON.parse(atob(token.split(".")[1]));
-//   } catch (e) {
-//     return null;
-//   }
-// };
-
 function parseJwt(token) {
   var base64Url = token.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");

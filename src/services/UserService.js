@@ -1,7 +1,9 @@
 import axios from "axios";
 import { authHeader } from "./AuthService";
 
-const API_URL = "http://localhost:8080/api/v1/";
+// const API_URL = "http://localhost:8080/api/v1/";
+const API_URL =
+  "http://game-review-env.eba-gtfmxqfn.us-east-1.elasticbeanstalk.com/api/v1/";
 
 const token = JSON.parse(localStorage.getItem("user"))?.token;
 const config = {
