@@ -1,7 +1,6 @@
 @use "Variables";
 
 .aboutTitle {
-  color: black;
   font-size: calc(14px + 1vw);
   margin: 0;
   text-align: center;
@@ -335,7 +334,7 @@
   .logosFit {
     height: 40%;
     min-height: 69px;
-    img{
+    img {
       height: 65%;
       min-height: 0;
     }

@@ -2,13 +2,7 @@ import "../../styles/Paul.scss";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import Paul from "../../assets/paul_mobile_nobg.png";
-import {
-  Linkedin,
-  Github,
-  Envelope,
-  Download,
-  TelephoneFill,
-} from "react-bootstrap-icons";
+import { Linkedin, Github, Envelope, Download } from "react-bootstrap-icons";
 import LeetCode_logo from "../../assets/LeetCodeNoBG.png";
 import HTML_logo from "../../assets/HTML5_logo.png";
 import CSS_logo from "../../assets/CSS3_logo.png";

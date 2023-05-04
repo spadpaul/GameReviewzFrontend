@@ -7,7 +7,7 @@ import {
 } from "react-bootstrap-icons";
 import UserService from "../services/UserService";
 import AuthService from "../services/AuthService";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // ## This component creates the dropdown.
@@ -29,9 +29,12 @@ export const Dropdown = () => {
       window.removeEventListener("mousedown", handleMousedown);
     };
   }, []);
+  // useEffect(() => {
+  //   handleDarkMode(darkMode);
+  // }, []);
 
   const user = UserService.userInfo(); // Grabs User Info From LocalStorage
-  let darkMode = false;
+  let darkMode = user.theme === "dark" ? true : false;
 
   const toggledropdown = () => {
     let toggleDropdown = document.getElementById("showdropdown");
@@ -46,8 +49,19 @@ export const Dropdown = () => {
 
   const handleDarkMode = () => {
     const body = document.body;
-    if (!darkMode) body.classList.toggle("darkmode");
-    else body.classList.remove("darkmode");
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!darkMode) {
+      body.classList.toggle("darkmode");
+      user.theme = "dark";
+      localStorage.setItem("user", JSON.stringify(user));
+      darkMode = true;
+    } else {
+      body.classList.remove("darkmode");
+      user.theme = "light";
+      localStorage.setItem("user", JSON.stringify(user));
+      darkMode = false;
+    }
   };
 
   let navigate = useNavigate();
@@ -81,7 +95,7 @@ export const Dropdown = () => {
           </div>
           <ArrowRight className="arrowdropdown" />
         </div>
-        <div className="dropdowntab">
+        {/* <div className="dropdowntab">
           <div>
             <Gear />
             <div>Settings</div>
@@ -94,7 +108,7 @@ export const Dropdown = () => {
             <div>Dark Mode</div>
           </div>
           <ArrowRight className="arrowdropdown" />
-        </div>
+        </div> */}
         <div className="dropdowntab" onClick={AuthService.logout}>
           <div>
             <DoorClosed />

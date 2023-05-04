@@ -122,7 +122,7 @@ const SignupForm = ({ setLogin }) => {
         </div>
       </div>
       <div className="formGroup">
-        <button className="btn" type="submit">
+        <button className="btn" type="submit" disabled={loading}>
           <div>{loading && <ArrowClockwise className="loading" />}</div>
           Sign Up
         </button>

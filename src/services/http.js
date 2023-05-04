@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:8080/api/v1",
+  baseURL: "http://gamer-reviewz-env.eu-west-2.elasticbeanstalk.com/api/v1",
   headers: {
     "Content-type": "application/json",
   },

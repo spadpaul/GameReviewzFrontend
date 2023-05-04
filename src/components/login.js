@@ -90,7 +90,7 @@ const LoginForm = ({
           <div className="invalid-feedback">{errors.password?.message}</div>
         </div>
         <div className="justifycenter">
-          <button className="btn" type="submit">
+          <button className="btn" type="submit" disabled={loading}>
             <div>{loading && <ArrowClockwise className="loading" />}</div>
             Login
           </button>

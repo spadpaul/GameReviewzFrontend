@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import UserService from "../services/UserService";
 import { PersonCircle } from "react-bootstrap-icons";
 import "../styles/Profile.scss";
-import { redirect } from "react-router-dom";
 
 const user = UserService.userInfo();
 

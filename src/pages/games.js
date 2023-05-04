@@ -1,4 +1,3 @@
-import { SearchBar } from "../components/navigation";
 import ArticlesService from "../services/ArticlesService";
 import { useState, useEffect } from "react";
 import MW from "../assets/mwblurII.jpg";
@@ -41,7 +40,7 @@ const Games = (props) => {
     },
   ];
 
-  if (props.carouselDb != undefined) carouselDb = props.carouselDb;
+  if (props.carouselDb !== undefined) carouselDb = props.carouselDb;
 
   // API will return array of objects so initialize state as an array.
   const [article, setArticles] = useState([]);

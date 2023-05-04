@@ -4,39 +4,6 @@ import { Person } from "react-bootstrap-icons";
 import { BalloonFill } from "react-bootstrap-icons";
 import { Alarm } from "react-bootstrap-icons";
 import UserService from "../services/UserService";
-import ErrorNotification from "../components/errorAlert";
-
-// Made changes due to li affecting other pages.
-let poll = {
-  question: "What game are you most looking forward to in 2023?",
-  answers: [
-    "Zelda Tears of the Kingdom",
-    "Jedi Survivor",
-    "Spongebob Cosmic Shake",
-    "Hogwarts Legacy",
-  ],
-  pollCount: 20,
-  answersWeight: [4, 4, 2, 10], //sum = 20
-  selectedAnswer: -1,
-};
-
-// let pollDOM = {
-//   question: document.querySelector(".poll .question"),
-//   answers: document.querySelector(".poll .option"),
-// };
-
-// pollDOM.question.innerHTML = poll.question;
-// poll.answers.map(function(answer, i){
-//   return(
-//     `
-//       <div className = "option" onClick="markAnswer('${i}')>
-//         ${answer}
-//         <span className="percentage-bar"></span>
-//         <span className="percentage-bar"></span>
-//       </div>
-//     `
-//   );
-// }).join("");
 
 const MostListUsers = (props) => {
   return props.db.map((item) => (

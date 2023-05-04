@@ -5,9 +5,6 @@ import SeriesX from "../assets/seriesx.jpg";
 import iPad from "../assets/ipad9Blur.jpg";
 
 export default function CarouselComponent({ array = undefined }) {
-  // ## Can be used to render dynamically from the database. 300 x 970
-  const handleSlideChange = (index) => {};
-
   // ## Default Slides Used If array is not specified.
   const defaultArray = [
     {

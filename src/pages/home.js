@@ -1,4 +1,3 @@
-import Macbook from "../assets/macbookblur.jpg";
 import MW from "../assets/mwblurII.jpg";
 import iPad from "../assets/ipad9.jpg";
 import Seriesx from "../assets/seriesx.jpg";
@@ -68,7 +67,7 @@ function Home() {
   return (
     <>
       <CarouselComponent array={carouselDb} />
-      <div className="homeContainer">
+      <div className="homeContainer" id="home">
         {/* <CarouselComponent img1={Zelda} img2={Seriesx} img3={Pixel} /> */}
         <div className="cardsContainer">
           <Cards db={demodb} />

@@ -25,12 +25,18 @@ body {
   cursor: pointer;
 }
 
+.containercenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .carouselcomponent {
   padding: 2%;
 }
 .darkmode {
   background-color: black;
-  color: white;
+  color: white !important;
 
   nav {
     color: white;
@@ -151,13 +157,7 @@ body {
 .dropdowntab:hover .arrowdropdown {
   transform: translateX(5px);
 }
-.darkmode {
-  color: white;
-  background-color: black;
-  nav {
-    color: white;
-  }
-}
+
 .displayflex {
   display: flex;
 }

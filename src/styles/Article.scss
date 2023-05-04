@@ -1,7 +1,6 @@
 @use "Variables";
 
-
-.articleIMG{
+.articleIMG {
   justify-content: center;
   display: flex;
 }
@@ -293,6 +292,15 @@
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
+}
+
+#stars {
+  svg {
+    position: relative;
+    top: -5px;
+    color: gold;
+    font-size: 3rem;
+  }
 }
 
 .starfill {

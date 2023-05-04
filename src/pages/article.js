@@ -19,14 +19,6 @@ function Article() {
     date: "",
   };
 
-  const currDate = new Date();
-
-  const date = {
-    day: currDate.getDate(),
-    month: currDate.getMonth() + 1,
-    year: currDate.getFullYear(),
-  };
-
   const [article, setArticle] = useState(initialState);
   const [images, setImages] = useState([]);
 
@@ -74,28 +66,26 @@ function Article() {
 
   const SplitReview = () => {
     const arr = article.review.split("@");
-    const displayArticle = [];
-    let i = 0;
-    let k = 0;
+     const displayArticle = [];
+     let i = 0;
+     let k = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-      let j = 0;
-      let k = 0;
-      while (arr[i].charAt(j) === "+") {
-        displayArticle.push(
-          <div className="articleIMG">
-          <img
-            key={images[k]?.id}
-            className="articleImages"
-            src={images[k]?.path}
-            alt="images"
-          />
-          </div>
-        );
-        // images.shift();
-        j++;
-        k++;
-      }
+     for (let i = 0; i < arr.length; i++) {
+       let j = 0;
+       while (arr[i].charAt(j) === "+") {
+         displayArticle.push(
+           <div className="articleIMG">
+           <img
+             key={images[k]?.id}
+             className="articleImages"
+             src={images[k]?.path}
+             alt="images"
+           />
+           </div>
+         );
+         j++;
+         k++;
+       }
       displayArticle.push(
         <p key={i} className="actualArticle">
           {arr[i].substring(j)}
@@ -105,15 +95,30 @@ function Article() {
     return <>{displayArticle}</>;
   };
 
+  const addStars = (item) => {
+    let stars = item.charAt(item.indexOf(":") + 1);
+    let j = 1;
+    const displayArticle = [];
+    while (j <= stars) {
+      displayArticle.push(<StarFill className="starfill" />);
+      j++;
+    }
+    while (j < 6) {
+      displayArticle.push(
+        <StarFill className="starfill" style={{ color: "#333333" }} />
+      );
+      j++;
+    }
+    return <>{displayArticle}</>;
+  };
+
   const SplitRating = () => {
     const arr = article.rating?.split("@");
-    console.log(arr);
-    const displayArticle = [];
     return arr?.map((item) => (
-      <div>
+      <div key={item}>
         <div className="displayflex">
           <div className="ratings ">{item.substring(0, item.indexOf(" "))}</div>
-          <StarFill className="starfill" />
+          {addStars(item)}
         </div>
         <div className="ratings">{item.substring(item.indexOf(" ") + 1)}</div>
       </div>

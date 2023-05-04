@@ -101,7 +101,7 @@ const Comments = ({ currentUserId, pageId }) => {
         setComments(res.data);
       });
     }
-  }, []);
+  }, [pageId, path]);
 
   return (
     <div className="comments">

@@ -5,7 +5,7 @@ const Footer = () => {
     window.scrollTo(0, 0);
   };
   return (
-    <div className="footer">
+    <footer className="footer">
       <div>
         <h1>Navigation</h1>
         <ul onClick={handleClick}>
@@ -35,7 +35,7 @@ const Footer = () => {
           site.
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;

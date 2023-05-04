@@ -1,5 +1,4 @@
 import axios from "axios";
-import { authHeader } from "./AuthService";
 
 const ARTICLE_URL = "http://localhost:8080/api/v1/articles";
 const COMMENT_URL = "http://localhost:8080/api/v1/comments";

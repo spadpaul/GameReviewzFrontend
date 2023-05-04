@@ -34,9 +34,9 @@ const Contact = () => {
   });
 
   const {
+    //Reset available if needed.
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(validationSchema),
