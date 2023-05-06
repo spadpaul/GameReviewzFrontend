@@ -3,10 +3,8 @@ import axios from "axios";
 // const ARTICLE_URL = "http://localhost:8080/api/v1/articles";
 // const COMMENT_URL = "http://localhost:8080/api/v1/comments";
 
-const ARTICLE_URL =
-  "http://game-review-env.eba-gtfmxqfn.us-east-1.elasticbeanstalk.com/api/v1/articles";
-const COMMENT_URL =
-  "http://game-review-env.eba-gtfmxqfn.us-east-1.elasticbeanstalk.com/api/v1/comments";
+const ARTICLE_URL = "https://gamereviewz.link/api/v1/articles";
+const COMMENT_URL = "https://gamereviewz.link/api/v1/comments";
 
 const token = JSON.parse(localStorage.getItem("user"))?.token;
 
