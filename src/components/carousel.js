@@ -37,7 +37,8 @@ export default function CarouselComponent({ array = undefined }) {
 
   const handleSlideClicked = (index) => {
     window.location.assign(
-      `http://localhost:3000/${array[index].page}/${array[index].id}`
+      // `http://localhost:3000/${array[index].page}/${array[index].id}`
+      `https://master.dgx57da20s84e.amplifyapp.com/${array[index].page}/${array[index].id}`
     );
   };
 
