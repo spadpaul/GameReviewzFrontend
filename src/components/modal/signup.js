@@ -42,22 +42,18 @@ const SignupForm = ({ setLogin }) => {
     const firstName = fullname[0];
     const lastName = fullname[1];
     let username = data.username.replaceAll(" ", "");
-    AuthService.register(
-      firstName,
-      lastName,
-      username,
-      data.email,
-      data.password
-    )
+    username = username.toLowerCase();
+    const email = data.email.toLowerCase();
+    AuthService.register(firstName, lastName, username, email, data.password)
+      .then(() => {
+        setSuccess(true);
+      })
       .catch((error) => {
         setLoginError(true);
         setErrorResponse(error.response.data);
       })
       .finally(() => {
         setLoading(false);
-        if (!loginError) {
-          setSuccess(true);
-        }
       });
   };
 
