@@ -21,10 +21,15 @@ const Contact = () => {
 
   const validationSchema = Yup.object().shape({
     fullname: Yup.string().required("Fullname is required"),
-    username: Yup.string().optional("Enter a username if you have an account."),
-    // .min(6, 'Username must be at least 6 characters')
-    // .max(20, 'Username must not exceed 20 characters'),
-    email: Yup.string().required("Email is required").email("Email is invalid"),
+    username: Yup.string()
+      .optional("Enter a username if you have an account.")
+      .default(user ? user.username : ""),
+    // .min(6, "Username must be at least 6 characters")
+    // .max(20, "Username must not exceed 20 characters"),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Email is invalid")
+      .default(user ? user.email : ""),
     subject: Yup.string()
       .required("Subject is required")
       .max(50, "Subject cannot exceed 50 characters"),
@@ -58,7 +63,7 @@ const Contact = () => {
   };
   const closePopup = () => {
     setPop(false);
-    // window.location.reload();
+    window.location.reload();
   };
 
   return (
@@ -104,7 +109,7 @@ const Contact = () => {
                 <input
                   name="username"
                   type="text"
-                  {...register("userName")}
+                  {...register("username")}
                   className={`form-control ${
                     errors.username ? "is-invalid" : ""
                   }`}

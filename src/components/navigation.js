@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/App.scss";
-import Modal from "./modal";
+import Modal from "./modal/modal";
 import { Dropdown } from "./dropdown";
 
 const Navbar = () => {
