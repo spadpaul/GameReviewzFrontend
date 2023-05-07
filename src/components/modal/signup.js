@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import AuthService from "../services/AuthService";
-import ErrorNotification from "./errorAlert";
+import AuthService from "../../services/AuthService";
+import ErrorNotification from "../errorAlert";
 import { ArrowClockwise } from "react-bootstrap-icons";
 
 const SignupForm = ({ setLogin }) => {

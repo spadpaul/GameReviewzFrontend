@@ -1,7 +1,9 @@
 import axios from "axios";
 
-// const API_URL = "http://localhost:8080/api/v1/auth/";
-const API_URL = "https://gamereviewz.link/api/v1/auth/";
+const API_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:8080/api/v1/auth/"
+    : "https://gamereviewz.link/api/v1/auth/";
 
 const register = (firstName, lastName, username, email, password) => {
   return axios.post(API_URL + "register", {

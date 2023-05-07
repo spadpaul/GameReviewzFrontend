@@ -52,9 +52,9 @@ export default function Community() {
     };
     e.preventDefault();
     if (user) {
-      UserService.addVote(obj).catch((error) => {
-        setIsError(error.response.data);
-      });
+      UserService.addVote(obj)
+        .then(() => setIsError("Thanks For Voting!"))
+        .catch((error) => setIsError(error.response.data));
     } else {
       setIsError("Please Login, To Vote!");
     }

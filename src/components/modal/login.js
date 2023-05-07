@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ArrowClockwise, Google } from "react-bootstrap-icons";
-import AuthService from "../services/AuthService";
-import ErrorNotification from "./errorAlert";
-import "../styles/Modal.scss";
+import AuthService from "../../services/AuthService";
+import ErrorNotification from "../errorAlert";
+import "../../styles/Modal.scss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 

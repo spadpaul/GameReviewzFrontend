@@ -36,10 +36,15 @@ export default function CarouselComponent({ array = undefined }) {
   if (array === undefined || array.length < 1) array = defaultArray;
 
   const handleSlideClicked = (index) => {
-    window.location.assign(
-      // `http://localhost:3000/${array[index].page}/${array[index].id}`
-      `https://master.dgx57da20s84e.amplifyapp.com/${array[index].page}/${array[index].id}`
-    );
+    if (window.location.hostname === "localhost") {
+      window.location.assign(
+        `http://localhost:3000/${array[index].page}/${array[index].id}`
+      );
+    } else {
+      window.location.assign(
+        `https://master.dgx57da20s84e.amplifyapp.com/${array[index].page}/${array[index].id}`
+      );
+    }
   };
 
   return (

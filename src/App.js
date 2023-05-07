@@ -1,5 +1,6 @@
 import Navbar from "./components/navigation";
 import { Route, Routes } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import Home from "./pages/home";
 import Contact from "./pages/contact";
 import About from "./pages/about";
@@ -19,9 +20,27 @@ import Profile from "./components/profile";
 // Contains the Routing for the layout of the website.
 // If app acts up with CORS, whitelabel error, switch to HashRouter.
 const App = () => {
+  const RemoveTrailingSlash = ({ ...rest }) => {
+    const location = useLocation();
+
+    // If the last character of the url is '/'
+    if (location.pathname.match("/.*/$")) {
+      return (
+        <Navigate
+          replace
+          {...rest}
+          to={{
+            pathname: location.pathname.replace(/\/+$/, ""),
+            search: location.search,
+          }}
+        />
+      );
+    } else return null;
+  };
   return (
     <div>
       <Navbar />
+      <RemoveTrailingSlash />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/games/:id" element={<Article />} />
