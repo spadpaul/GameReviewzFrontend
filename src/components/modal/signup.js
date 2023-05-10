@@ -43,7 +43,7 @@ const SignupForm = ({ setLogin }) => {
     const lastName = fullname[1];
     let username = data.username.replaceAll(" ", "");
     username = username.toLowerCase();
-    const email = data.email.toLowerCase();
+    let email = data.email.toLowerCase();
     AuthService.register(firstName, lastName, username, email, data.password)
       .then(() => {
         setSuccess(true);
