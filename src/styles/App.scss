@@ -225,29 +225,37 @@ body {
   color: white;
   display: flex;
   font-size: Variables.$md-text;
-  gap: 2px;
-  height: 250px;
-  justify-content: center;
-
+  height: 200px;
+  justify-content: space-between;
+  padding: 0 2.5%;
   div {
-    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    margin: auto 2.5%;
     ul {
-      padding-right: 10%;
+      margin:0;
+      padding: 0;
       text-decoration: none;
-
+      display: flex;
+      column-gap: 15px;
+      row-gap: 10px;
+      flex-wrap: wrap;
       a {
         color: white;
         list-style: none;
         text-decoration: none;
+        font-size: 14px;
+        line-height: 1;
+        li{
+          margin: auto;
+        }
       }
     }
     h1 {
       font-weight: bold;
-
+      font-size: 20px;
+      line-height: 2;
       span {
         color: red;
       }
@@ -255,6 +263,7 @@ body {
     p {
       color: gray;
       font-size: Variables.$sm-text;
+      margin-top: 0;
     }
   }
 }

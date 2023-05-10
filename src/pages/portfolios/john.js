@@ -7,11 +7,17 @@ import CSS_logo from "../../assets/CSS3_logo.png";
 import JavaScript_logo from "../../assets/javascript.png";
 import SQL_logo from "../../assets/sql.png";
 import React_logo from "../../assets/React_logo.png";
+import { Twitter } from "react-bootstrap-icons";
+import { FileTextFill } from "react-bootstrap-icons";
+import { Linkedin } from "react-bootstrap-icons";
+import { Github } from "react-bootstrap-icons";
+import Resume from "../../assets/TyheirBrooks_Software EngineerPDF.pdf";
 
 export default function JohnPage() {
   useEffect(() => {
     const nav = document.getElementById("nav");
     nav.style.display = "none";
+    window.scrollTo(0, 0);
 
     return () => {
       nav.style.display = "";
@@ -29,13 +35,10 @@ export default function JohnPage() {
             <ul>
               <div className={"navContainer"}>
                 <li>
-                  <a href="#johnAbout">About Me</a>
-                </li>
-                <li>
                   <a href="#johnSkills">Skills</a>
                 </li>
                 <li>
-                  <a href="#johnResume">Resume</a>
+                  <a href="#johnAbout">About Me</a>
                 </li>
                 <li className={"lastLi"}>
                   <a href="#johnContact">Contact</a>
@@ -66,7 +69,7 @@ export default function JohnPage() {
       </div>
       <div className={"defaultContainer"}>
         <div className={"skills"}>
-          <h1>Skills I've Learned</h1>
+          <h1>Skills</h1>
         </div>
         <div className={"logos"}>
           <img src={Java_logo} alt={"Java Logo"} />
@@ -78,6 +81,56 @@ export default function JohnPage() {
         </div>
       </div>
       <br />
+      <div className="johnContainer">
+
+        <div className="johnContent">
+          <div className="contentContainer">
+            <div className="contentIcon">
+              <a className="iconLink" href="https://www.linkedin.com/in/john-beltran/">
+                <Twitter/>
+              </a>
+            </div>
+            <h1 className="contentTitle">???</h1>
+            <div className="content">Unknown</div>
+          </div>
+        </div>
+
+        <div className="johnContent">
+          <div className="contentContainer">
+            <div className="contentIcon">
+              <a className="iconLink" href="https://www.linkedin.com/in/john-beltran/">
+                <FileTextFill/>
+              </a>
+            </div>
+            <h1 className="contentTitle">Resume</h1>
+            <div className="content">Click the icon so you can check out my Resume!</div>
+          </div>
+        </div>
+
+        <div className="johnContent">
+          <div className="contentContainer">
+            <div className="contentIcon">
+              <a className="iconLink" href="https://www.linkedin.com/in/john-beltran/">
+                <Linkedin/>
+              </a>
+            </div>
+            <h1 className="contentTitle">LinkedIn</h1>
+            <div className="content">Here is my Linkedin in case you missed it, just click the icon</div>
+          </div>
+        </div>
+
+        <div className="johnContent">
+          <div className="contentContainer">
+            <div className="contentIcon">
+              <a className="iconLink" href="https://github.com/JohnBeltran4">
+                <Github/>
+              </a>
+            </div>
+            <h1 className="contentTitle">Projects</h1>
+            <div className="content">Here you can check out my previous projects on github</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
