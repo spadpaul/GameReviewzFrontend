@@ -112,7 +112,7 @@
 
 .defaultContainer{
   display: flex;
-  margin: 0 5%;
+  margin: 20px 5%;
   flex-direction: column;
   .logos {
     pointer-events: none;
@@ -123,7 +123,7 @@
     justify-content: center;
     column-gap: 2rem;
     margin: auto;
-    max-width: 80%;
+    width: 90%;
     img{
       height: 10vw;
       margin-bottom: 10px;
@@ -132,15 +132,64 @@
     }
   }
   .skills{
-    font-size: 2em;
-    margin: auto;
-    text-align: center;
-    height: 10%;
+    font-size: 3em;
+    margin: 0 auto;
     font-weight: bold;
-    color: #F6BE00;
+    color: #541a8b;
+    text-shadow: 1px 1px grey;
   }
 }
 
+.johnContainer {
+  gap: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  margin: 20px 5%;
+  justify-content: center;
+}
+
+.johnContent{
+  height: 300px;
+  width: 40%;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 3.5px;
+  display: flex;
+  .contentContainer{
+    margin: 1%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    .contentIcon{
+      font-size: 45px;
+      margin-top: 15%;
+      filter: drop-shadow(1px 1px black);
+      .iconLink{
+        color: #ffda1a;
+      }
+      .iconLink:hover{
+        color: #541a8b;
+      }
+    }
+    .contentTitle{
+      font-weight: bold;
+      text-align: center;
+      font-size: 25px;
+      margin-top: 0;
+    }
+    .content{
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+      margin: 0 5%;
+    }
+  }
+}
+.johnContent:hover{
+  border-color: #541a8b;
+}
 
 @media only screen and (max-width: 975px) {
   .profileContainer {
@@ -175,7 +224,7 @@
   }
   .defaultContainer{
     .skills{
-      font-size: 1.8em;
+      font-size: 2em;
     }
   }
   /*
@@ -203,9 +252,33 @@
   .johnName{
     margin: 10px auto;
   }
-
+  .johnContent{
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .johnContent{
+    width: 47%;
+    .contentContainer{
+      .contentIcon{
+        margin-top: 20%;
+      }
+      .contentTitle{
+        font-size: 23px;
+      }
+      .content{
+        font-size: 16px;
+      }
+    }
+  }
+  .johnContainer{
+    margin: 20px 1%;
+  }
 }
 @media only screen and (max-width: 491px) {
+  .defaultContainer{
+    margin: 20px 0;
+  }
   .profilePhoto{
     width: 15em;
     height: 15em;
@@ -227,5 +300,8 @@
     .lastLi{
       padding: 0 5px;
     }
+  }
+  .johnContainer{
+    gap: 5px;
   }
 }

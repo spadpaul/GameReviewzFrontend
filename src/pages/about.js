@@ -74,7 +74,7 @@ function Card() {
     },
     {
       name: "John Beltran",
-      url: "https://www.birdforum.net/",
+      url: "https://www.linkedin.com/in/john-beltran/",
       city: "White Plains, NY",
       path: "/portfolio/john",
       img: John,
