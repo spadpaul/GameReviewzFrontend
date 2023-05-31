@@ -88,7 +88,7 @@ function Home() {
         });
       })
       .catch((e) => {
-        return <div>Hello You have found an error</div>;
+        return <div>Hello You have found a error</div>;
       });
   };
 

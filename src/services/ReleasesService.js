@@ -1,4 +1,5 @@
 import axios from "axios";
+import iPad from "../assets/ipad9.jpg";
 
 const RELEASES_URL =
   window.location.hostname === "localhost"
