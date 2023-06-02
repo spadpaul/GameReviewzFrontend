@@ -122,7 +122,7 @@ export default function JohnPage() {
         <div className="johnContent">
           <div className="contentContainer">
             <div className="contentIcon">
-              <a className="iconLink" href="https://github.com/JohnBeltran4">
+              <a className="iconLink" href="https://www.linkedin.com/in/john-beltran/">
                 <Github/>
               </a>
             </div>

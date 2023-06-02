@@ -62,13 +62,13 @@ function Home() {
         var yyyy = today.getFullYear();
 
         today = mm + '/' + dd + '/' + yyyy;
-        console.log(today);
+        const t = Date.parse(today);
         const limitedArray = sortedArray.filter(function(obj) {
-          return obj.releaseDate >= today;
+          let objDate = Date.parse(obj.releaseDate);
+          const d = new Date(objDate);
+          return t <= d;
         })
-
-        console.log(limitedArray);
-        setReleases(sortedArray.splice(0, 10));
+        setReleases(limitedArray.splice(0, 10));
       })
       .catch((e) => {
         return <div>Error Occured</div>
