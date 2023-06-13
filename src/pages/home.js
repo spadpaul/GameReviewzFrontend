@@ -161,5 +161,5 @@ const Sidebar = ({ db }) => {
         </ul>
       </div>
     </div>
-  );
+  )
 };
