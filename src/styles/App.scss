@@ -234,7 +234,7 @@ body {
     justify-content: center;
     margin: auto 2.5%;
     ul {
-      margin:0;
+      margin: 0;
       padding: 0;
       text-decoration: none;
       display: flex;
@@ -247,7 +247,7 @@ body {
         text-decoration: none;
         font-size: 14px;
         line-height: 1;
-        li{
+        li {
           margin: auto;
         }
       }
@@ -336,7 +336,7 @@ html {
   margin: auto 10px;
 }
 .loginButton {
-  background-color: black;
+  background-color: #3285ff;
   border: none;
   color: white;
   cursor: pointer;
@@ -369,6 +369,7 @@ nav a.active {
 }
 .navlink {
   text-decoration: none;
+  color: black;
 }
 .navItems {
   display: flex;
