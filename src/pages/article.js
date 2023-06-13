@@ -5,11 +5,9 @@ import ArticlesService from "../services/ArticlesService";
 import Comments from "../components/comments/Comments";
 import UserService from "../services/UserService";
 import { StarFill } from "react-bootstrap-icons";
+import Modal from "../components/modal/modal";
 
 function Article() {
-  let { id } = useParams();
-  const user = UserService.userInfo();
-
   const initialState = {
     id: null,
     title: "",
@@ -21,9 +19,23 @@ function Article() {
 
   const [article, setArticle] = useState(initialState);
   const [images, setImages] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
+  const [imgPath, setImgPath] = useState("");
 
+  let { id } = useParams();
+  const user = UserService.userInfo();
+
+  useEffect(() => {
+    if (id) {
+      getArticle(id);
+      getImages(id);
+      window.scrollTo(0, 0);
+    }
+  }, [id]);
+
+  // Get The Article in the DB by the id.
   const getArticle = (id) => {
-    let path = window.location.pathname.substring(0, 6) === "/games"; // Could cause problems when move to AWS.
+    let path = window.location.pathname.substring(0, 6) === "/games";
     if (path) {
       ArticlesService.getGamesById(id)
         .then((res) => {
@@ -39,6 +51,7 @@ function Article() {
     }
   };
 
+  // Get the images for the current article by it's id.
   const getImages = (id) => {
     let path = window.location.pathname.substring(0, 6) === "/games";
     if (path) {
@@ -56,36 +69,35 @@ function Article() {
     }
   };
 
-  useEffect(() => {
-    if (id) {
-      getArticle(id);
-      getImages(id);
-      window.scrollTo(0, 0);
-    }
-  }, [id]);
-
+  // Format the Article based by +, @ syntax. Sets the article how it is to be displayed.
   const SplitReview = () => {
     const arr = article.review.split("@");
-     const displayArticle = [];
-     let i = 0;
-     let k = 0;
+    const displayArticle = [];
+    let k = 0;
 
-     for (let i = 0; i < arr.length; i++) {
-       let j = 0;
-       while (arr[i].charAt(j) === "+") {
-         displayArticle.push(
-           <div className="articleIMG">
-           <img
-             key={images[k]?.id}
-             className="articleImages"
-             src={images[k]?.path}
-             alt="images"
-           />
-           </div>
-         );
-         j++;
-         k++;
-       }
+    for (let i = 0; i < arr.length; i++) {
+      let j = 0;
+      while (arr[i].charAt(j) === "+") {
+        const img = images[k];
+        displayArticle.push(
+          <>
+            <div className="articleIMG">
+              <img
+                key={images[k]?.id}
+                onClick={() => {
+                  setModalShow(true);
+                  setImgPath(img.path);
+                }}
+                className="articleImages"
+                src={images[k]?.path}
+                alt="images"
+              />
+            </div>
+          </>
+        );
+        j++;
+        k++;
+      }
       displayArticle.push(
         <p key={i} className="actualArticle">
           {arr[i].substring(j)}
@@ -95,6 +107,7 @@ function Article() {
     return <>{displayArticle}</>;
   };
 
+  // Add stars for the ratings.
   const addStars = (item) => {
     let stars = item.charAt(item.indexOf(":") + 1);
     let j = 1;
@@ -112,6 +125,7 @@ function Article() {
     return <>{displayArticle}</>;
   };
 
+  // Split the ratings. Based off formatting.
   const SplitRating = () => {
     const arr = article.rating?.split("@");
     return arr?.map((item) => (
@@ -128,6 +142,11 @@ function Article() {
   return (
     <div>
       <br />
+      {modalShow && (
+        <Modal show={setModalShow}>
+          <img className="modalImg" src={imgPath} alt="images" />
+        </Modal>
+      )}
       <div className="backgroundPhotoCont">
         <img
           className={"blurredPhoto"}
@@ -142,9 +161,9 @@ function Article() {
           />
           <div className={"gameInfo"}>
             <p className={"gameTitle"}>{article.title}</p>
-            <p
-              className={"gameFacts"}
-            >{`Release Date: ${article.releaseDate}`}</p>
+            <p className={"gameFacts"}>
+              {`Release Date: ${article.releaseDate}`}
+            </p>
             <p className={"gameFacts"}>{`Genre: ${article.genre}`}</p>
             <p className={"gameFacts"}>{`Author: ${article.reviewer}`}</p>
             <p className={"gameFacts"}>{`Date: ${article.datePosted}`}</p>

@@ -1,0 +1,126 @@
+body {
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.c-b {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+  margin-bottom: 20px;
+  .controller {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    box-shadow: 0 0 0.5em black;
+    border-radius: 100%;
+  }
+  h2 {
+    text-shadow: 0 0 0.5em white;
+  }
+}
+.c-c {
+  height: 70%;
+  .linecontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0 0;
+    .line {
+      width: 35%;
+      height: 1px;
+      background-color: black;
+    }
+    .or {
+      margin: 0 10px;
+      font-weight: bold;
+      text-shadow: 0 0 0.5em white;
+    }
+  }
+}
+.firstlast {
+  input {
+    width: 100%;
+    padding: 5px;
+    height: 25px;
+    border: 1px solid #f5f4f48c;
+    border-radius: 8px;
+    font-size: large;
+  }
+}
+.form-group {
+  width: 80%;
+  margin-bottom: 15px;
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    padding: 5px;
+    height: 25px;
+    border: 1px solid #f5f4f48c;
+    border-radius: 8px;
+    font-size: large;
+  }
+}
+
+.rowcontainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 30px;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+.signin {
+  color: white;
+  width: 70%;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3285ff;
+  font-size: 16px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 610px) {
+  .form-group {
+    margin-bottom: 10px;
+    input {
+      height: 10px;
+      font-size: small;
+    }
+  }
+  .modal {
+    height: 520px;
+  }
+  .signin {
+    height: 20px;
+  }
+  .firstlast {
+    label {
+      span {
+        font-size: x-small;
+      }
+    }
+    input {
+      height: 10px;
+      font-size: small;
+    }
+  }
+}

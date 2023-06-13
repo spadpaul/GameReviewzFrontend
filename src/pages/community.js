@@ -1,9 +1,10 @@
-import { useState } from "react";
 import "../styles/Community.scss";
 import { Person } from "react-bootstrap-icons";
 import { BalloonFill } from "react-bootstrap-icons";
 import { Alarm } from "react-bootstrap-icons";
 import UserService from "../services/UserService";
+import ReleasesService from "../services/ReleasesService";
+import { useEffect, useState } from "react";
 
 const MostListUsers = (props) => {
   return props.db.map((item) => (
@@ -34,14 +35,68 @@ const Releases = (props) => {
     <div key={item.id}>
       <div className="mostSection">
         <Alarm />
-        {item.game} {" - "}
-        <i>{item.date}</i>
+        {item.product} {" - "}
+        <i>{item.releaseDate}</i>
       </div>
     </div>
   ));
 };
 
 export default function Community() {
+  const [releases, setReleases] = useState([]);
+
+  let i = 0;
+  const gameReleases = releases.filter(function(obj) {
+    if(obj.base === 'games' && i < 5)
+    {
+      i++;
+      return true;
+    }
+    return false;
+  })
+
+  let j = 0;
+  const techReleases = releases.filter(function(obj) {
+    if(obj.base === 'tech' && j < 5)
+    {
+      j++;
+      return true;
+    }
+    return false;
+  })
+  
+
+  useEffect(() => {
+    retrieveReleases();
+  }, []);
+  
+  const retrieveReleases = () => {
+    ReleasesService.getAllReleases()
+      .then((response) => {
+        let sortedArray = response.data;
+        sortedArray.sort(function(a,b){
+          return new Date(a.releaseDate) - new Date(b.releaseDate);
+        });
+        
+        let today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+  
+        today = mm + '/' + dd + '/' + yyyy;
+        const t = Date.parse(today);
+        const limitedArray = sortedArray.filter(function(obj) {
+          let objDate = Date.parse(obj.releaseDate);
+          const d = new Date(objDate);
+          return t <= d;
+        })
+        setReleases(limitedArray);
+      })
+      .catch((e) => {
+        return <div>Error Occured</div>
+      })
+  }
+
   const [pollOption, setpollOption] = useState("option1");
   const [isError, setIsError] = useState("");
   const user = UserService.userInfo();
@@ -191,7 +246,7 @@ export default function Community() {
             <div className="column gameReleases">
               <b className="mosts">Upcoming Game Releases</b>
               <ul className="userNames">
-                <Releases db={gamesDB} />
+                <Releases db={gameReleases} />
               </ul>
             </div>
 
@@ -212,7 +267,7 @@ export default function Community() {
             <div className="column techReleases">
               <b className="mosts">Upcoming Tech Releases</b>
               <ul className="userNames">
-                <Releases db={techDB} />
+                <Releases db={techReleases} />
               </ul>
             </div>
           </div>

@@ -42,7 +42,7 @@ export default function CarouselComponent({ array = undefined }) {
       );
     } else {
       window.location.assign(
-        `https://master.dgx57da20s84e.amplifyapp.com/${array[index].page}/${array[index].id}`
+        `https://www.gamereviewz.dev/${array[index].page}/${array[index].id}`
       );
     }
   };
