@@ -71,7 +71,7 @@ export default function TyPage() {
           </ul>
         </div>
       </div>
-      <div className="tybottombackground">
+      {/* <div className="tybottombackground">
         <div className="tyRectangleContainer">
           <div className="tyRectangle">
             <div
@@ -172,7 +172,7 @@ export default function TyPage() {
             </NavLink>
           </div>
         </div>
-      </div>
+      </div> */}
       <div
         style={{
           backgroundColor: "white",
